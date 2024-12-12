@@ -1,0 +1,171 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #fff; /* Light text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  cursor: none; /* Hide default cursor */
+}
+
+/* Main container */
+.main {
+  width: 100%;
+  max-width: 450px; /* Slightly larger container */
+  padding: 20px;
+  text-align: center;
+  background-color: #1a1a2e;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.app-container {
+  padding: 20px;
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom cursor */
+.cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4dd8; /* Bright pink cursor */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 77, 216, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: ripple-animation 1s ease-out infinite;
+  z-index: 999;
+}
+
+@keyframes ripple-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/* Form styles */
+form label {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 5px;
+  color: #c2c2c2;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: 1px solid #5c5c5c;
+  border-radius: 4px;
+  background-color: #252525;
+  color: #f5f5f5;
+  font-size: 1em;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border: 1px solid #8c52ff; /* Highlight border color */
+  outline: none;
+}
+
+/* Button styles */
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #8c52ff; /* Main button color */
+  color: #f5f5f5;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #6a3dff; /* Darker shade on hover */
+}
+
+/* Message text */
+p {
+  font-size: 1em;
+  color: #c2c2c2;
+}
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.modal-box button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #8c52ff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-box button:hover {
+  background-color: #6a3dff;
+}
+
+/* Styling for empty states or messages */
+.message-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+/* Input field focus state */
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border: 2px solid #8c52ff; /* Highlight focus state */
+  outline: none;
+}
