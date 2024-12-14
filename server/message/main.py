@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_socketio import SocketIO, send, join_room, leave_room
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  
+
 app.config['SECRET_KEY'] = 'b9a0d18fce894e4c9f09cda5b5c4eccc3c528e74ea3a90f2'
 socketio = SocketIO(app, cors_allowed_origins="*")
 
